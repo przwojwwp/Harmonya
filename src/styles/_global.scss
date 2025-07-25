@@ -1,0 +1,56 @@
+@use "./_variables.scss" as *;
+
+.container {
+  width: 90%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+.section {
+  padding: $section-padding 0;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: $section-margin-bottom;
+}
+
+.btn {
+  display: inline-block;
+  background-color: $color-primary;
+  color: $color-background;
+  padding: $btn-padding-y $btn-padding-x;
+  border: 2px solid $color-primary;
+  border-radius: $radius-pill;
+  font-weight: bold;
+  font-size: $btn-font-size;
+  cursor: pointer;
+  transition: $transition-default;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+
+  &:hover {
+    background-color: transparent;
+    color: $color-primary;
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: $color-primary;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-background;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gold-text {
+  color: $color-primary;
+}

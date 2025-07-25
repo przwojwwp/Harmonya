@@ -1,0 +1,23 @@
+// === MEDIA QUERIES ===
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 639.9px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: 640px) and (max-width: 1199.99px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// === FLEX CENTER ===
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

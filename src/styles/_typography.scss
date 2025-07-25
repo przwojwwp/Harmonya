@@ -1,0 +1,52 @@
+@use "./variables.scss" as *;
+
+body {
+  font-family: $font-main;
+  background-color: $color-background;
+  color: $color-text-light;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-default;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-headings;
+  font-style: italic;
+  color: $color-text-light;
+  margin-bottom: $spacing-lg;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  line-height: $line-height-heading;
+}
+
+h2 {
+  font-size: $font-size-h2;
+  color: $color-primary;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+p {
+  margin-bottom: $spacing-md;
+  color: $color-text-muted;
+}
+
+a {
+  text-decoration: none;
+  color: $color-primary;
+  transition: $transition-default;
+
+  &:hover {
+    color: $color-text-light;
+  }
+}
