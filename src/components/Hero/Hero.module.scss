@@ -14,7 +14,6 @@
 
 .hero-content {
   max-width: 800px;
-  width: 66%;
   position: relative;
   z-index: 1;
   display: flex;
@@ -47,6 +46,7 @@
 .hero-image {
   display: flex;
   max-width: 360px;
+  transform: translateX(5%);
 
   img {
     width: 100%;
