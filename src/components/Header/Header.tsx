@@ -9,10 +9,10 @@ export const Header = () => {
             <img
               src="public/img/logo.jpeg"
               alt="Harmonya Logo"
-              className={styles.logoImage}
+              className={styles["logo-image"]}
             />
           </a>
-          <ul className={styles.navLinks}>
+          <ul className={styles["nav-links"]}>
             <li>
               <a href="#home">Home</a>
             </li>
@@ -29,7 +29,7 @@ export const Header = () => {
               <a href="#pricing">Oferta</a>
             </li>
           </ul>
-          <div className={styles.mobileToggle}>
+          <div className={styles["mobile-toggle"]}>
             <i className="fas fa-bars"></i>
           </div>
           <a href="#contact" className="btn">

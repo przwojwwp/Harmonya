@@ -1,4 +1,4 @@
-// src/components/Header/Header.module.scss
+@use "../../styles/variables" as *;
 
 .header {
   position: fixed;
@@ -7,10 +7,10 @@
   width: 100%;
   padding: 20px 0;
   z-index: 1000;
-  transition: var(--transition);
+  transition: $transition-default;
 }
 
-.headerScrolled {
+.header-scrolled {
   background-color: rgba(13, 13, 13, 0.95);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   padding: 15px 0;
@@ -26,56 +26,56 @@
   display: inline-block;
 }
 
-.logoImage {
+.logo-image {
   height: 50px;
   width: auto;
-  transition: var(--transition);
+  transition: $transition-default;
 }
 
-.logoImageScrolled {
+.logo-image-scrolled {
   height: 40px;
 }
 
-.navLinks {
+.nav-links {
   display: flex;
   list-style: none;
 }
 
-.navLinks li {
+.nav-links li {
   margin-left: 30px;
 }
 
-.navLinks a {
-  color: var(--white);
+.nav-links a {
+  color: $color-text-light;
   font-weight: 500;
   position: relative;
   padding: 5px 0;
   text-decoration: none;
-  transition: var(--transition);
+  transition: $transition-default;
 }
 
-.navLinks a:hover {
-  color: var(--gold);
+.nav-links a:hover {
+  color: $color-primary;
 }
 
-.navLinks a::after {
+.nav-links a::after {
   content: "";
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: var(--gold);
+  background-color: $color-primary;
   bottom: 0;
   left: 0;
-  transition: var(--transition);
+  transition: $transition-default;
 }
 
-.navLinks a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
-.mobileToggle {
+.mobile-toggle {
   display: none;
   cursor: pointer;
   font-size: 1.5rem;
-  color: var(--white);
+  color: $color-text-light;
 }
