@@ -1,0 +1,38 @@
+.benefits {
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.benefit-item {
+  background-color: rgba(13, 13, 13, 0.5);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: $transition-default;
+  border: 1px solid rgba(130, 135, 142, 0.1);
+  text-align: center;
+}
+
+.benefit-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(215, 176, 77, 0.1);
+  border-color: $color-primary;
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  color: $color-primary;
+  margin-bottom: 20px;
+}
+
+.benefit-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: $color-text-light;
+}

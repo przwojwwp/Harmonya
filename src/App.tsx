@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import { BeforeAfter } from "./components/BeforeAfter";
 import { Benefits } from "./components/Benefits";
 import { Contact } from "./components/Contact";
@@ -9,12 +13,16 @@ import { Pricing } from "./components/Pricing";
 import { Testimonials } from "./components/Testimonials";
 
 export const App = () => {
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <>
       <Header />
-      {/* <Hero />
+      <Hero />
       <Benefits />
-      <Testimonials />
+      {/* <Testimonials />
       <BeforeAfter />
       <Faq />
       <Pricing />
