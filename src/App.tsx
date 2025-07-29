@@ -22,8 +22,8 @@ export const App = () => {
       <Header />
       <Hero />
       <Benefits />
-      {/* <Testimonials />
-      <BeforeAfter />
+      <Testimonials />
+      {/* <BeforeAfter />
       <Faq />
       <Pricing />
       <Contact />
