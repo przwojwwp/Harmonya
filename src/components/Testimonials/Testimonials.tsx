@@ -1,6 +1,49 @@
+import { useState } from "react";
+import styles from "./Testimonials.module.scss";
+import cn from "classnames";
+
 export const Testimonials = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const testimonials = [
+    {
+      text: `
+      Współpraca z Harmonya Agency całkowicie odmieniła mój biznes.
+      Ich holistyczne podejście do marketingu pozwoliło mi dotrzeć do nowej grupy klientów,
+      a moje social media w końcu wyglądają profesjonalnie i spójnie.`,
+      author: "Anna Kowalska",
+      role: `Studio Jogi "Spokój"`,
+    },
+    {
+      text: `
+      Najbardziej cenię ich zaangażowanie i zrozumienie specyfiki branży wellness.
+      Czuję, że mój marketing jest w dobrych rękach, a ja mogę skupić się na pracy z klientami,
+      zamiast martwić się o Instagram czy newslettery.`,
+      author: "Marek Nowak",
+      role: `Centrum Holistyczne "Harmonia"`,
+    },
+    {
+      text: `
+      Efekty naszej współpracy przerosły moje oczekiwania.
+      W ciągu 3 miesięcy liczba klientów wzrosła o 40%, a moja marka
+      zyskała wyrazisty charakter i rozpoznawalność wśród odbiorców.`,
+      author: "Karolina Wiśniewska",
+      role: `Gabinet Naturalnej Terapii "Natura"`,
+    },
+  ];
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
   return (
-    <section id="testimonials" className="testimonials section">
+    <section
+      id="testimonials"
+      className={cn(styles.testimonials, styles.section)}
+    >
       <div className="container">
         <div className="section-title" data-aos="fade-up">
           <h2>Co mówią nasi klienci</h2>
@@ -10,114 +53,85 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div className="testimonials-wrapper">
-          <div className="testimonials-slider" id="testimonialsSlider">
-            <div className="testimonial-slide" data-aos="fade-up">
-              <div className="testimonial-content">
-                <div className="testimonial-text">
-                  <i className="fas fa-quote-left quote-icon"></i>
-                  <p>
-                    Współpraca z Harmonya Agency całkowicie odmieniła mój
-                    biznes. Ich holistyczne podejście do marketingu pozwoliło mi
-                    dotrzeć do nowej grupy klientów, a moje social media w końcu
-                    wyglądają profesjonalnie i spójnie.
-                  </p>
-                  <div className="testimonial-author">
-                    <h4>Anna Kowalska</h4>
-                    <p>Studio Jogi "Spokój"</p>
+        <div className={styles["testimonials-wrapper"]}>
+          <div
+            className={styles["testimonials-slider"]}
+            id="testimonialsSlider"
+          >
+            {testimonials.map((item, index) => (
+              <div
+                key={index}
+                className={cn(
+                  styles["testimonial-slide"],
+                  index !== activeIndex && styles.hidden
+                )}
+                data-aos="fade-up"
+                data-aos-delay={300}
+              >
+                <div className={styles["testimonial-content"]}>
+                  <div className={styles["testimonial-text"]}>
+                    <div className={styles["testimonial-text"]}>
+                      <i
+                        className={cn(
+                          "fas",
+                          "fa-quote-left",
+                          styles["quote-icon"]
+                        )}
+                      ></i>
+                      <p>{item.text}</p>
+                      <div className={styles["testimonial-author"]}>
+                        <h4>{item.author}</h4>
+                        <p>{item.role}</p>
+                      </div>
+                    </div>
+                    <div className={styles["testimonial-image"]}>
+                      <img src="/api/placeholder/300/300" alt={item.author} />
+                    </div>
                   </div>
                 </div>
-                <div className="testimonial-image">
-                  <img
-                    src="/api/placeholder/300/300"
-                    alt="Anna Kowalska - Studio Jogi Spokój"
-                  />
-                </div>
               </div>
-            </div>
-
-            <div
-              className="testimonial-slide"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="testimonial-content">
-                <div className="testimonial-text">
-                  <i className="fas fa-quote-left quote-icon"></i>
-                  <p>
-                    Najbardziej cenię ich zaangażowanie i zrozumienie specyfiki
-                    branży wellness. Czuję, że mój marketing jest w dobrych
-                    rękach, a ja mogę skupić się na pracy z klientami, zamiast
-                    martwić się o Instagram czy newslettery.
-                  </p>
-                  <div className="testimonial-author">
-                    <h4>Marek Nowak</h4>
-                    <p>Centrum Holistyczne "Harmonia"</p>
-                  </div>
-                </div>
-                <div className="testimonial-image">
-                  <img
-                    src="/api/placeholder/300/300"
-                    alt="Marek Nowak - Centrum Holistyczne Harmonia"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="testimonial-slide"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="testimonial-content">
-                <div className="testimonial-text">
-                  <i className="fas fa-quote-left quote-icon"></i>
-                  <p>
-                    Efekty naszej współpracy przerosły moje oczekiwania. W ciągu
-                    3 miesięcy liczba klientów wzrosła o 40%, a moja marka
-                    zyskała wyrazisty charakter i rozpoznawalność wśród
-                    odbiorców.
-                  </p>
-                  <div className="testimonial-author">
-                    <h4>Karolina Wiśniewska</h4>
-                    <p>Gabinet Naturalnej Terapii "Natura"</p>
-                  </div>
-                </div>
-                <div className="testimonial-image">
-                  <img
-                    src="/api/placeholder/300/300"
-                    alt="Karolina Wiśniewska - Gabinet Naturalnej Terapii Natura"
-                  />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className="testimonial-controls">
-            <button className="testimonial-arrow prev" id="prevTestimonial">
+          <div className={styles["testimonial-controls"]}>
+            <button
+              className={cn(styles["testimonial-arrow"], styles.prev)}
+              id="prevTestimonial"
+              onClick={prevSlide}
+            >
               <i className="fas fa-chevron-left"></i>
             </button>
-            <div className="testimonial-dots" id="testimonialDots">
-              <span className="dot active"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
+            <div className={styles["testimonial-dots"]} id="testimonialDots">
+              {testimonials.map((_, index) => (
+                <span
+                  className={cn(
+                    styles.dot,
+                    index === activeIndex && styles.active
+                  )}
+                  onClick={() => setActiveIndex(index)}
+                ></span>
+              ))}
             </div>
-            <button className="testimonial-arrow next" id="nextTestimonial">
+            <button
+              className={cn(styles["testimonial-arrow"], styles.next)}
+              id="nextTestimonial"
+              onClick={nextSlide}
+            >
               <i className="fas fa-chevron-right"></i>
             </button>
           </div>
         </div>
 
         <div
-          className="video-testimonial"
+          className={styles["video-testimonial"]}
           data-aos="fade-up"
           data-aos-delay="300"
         >
           <h3>Zobacz videoopinię naszego klienta</h3>
-          <div className="video-container">
-            <div className="video-placeholder">
+          <div className={styles["video-container"]}>
+            <div className={styles["video-placeholder"]}>
               <img src="/api/placeholder/800/450" alt="Video Testimonial" />
-              <div className="play-button">
+              <div className={styles["play-button"]}>
                 <i className="fas fa-play"></i>
               </div>
             </div>
