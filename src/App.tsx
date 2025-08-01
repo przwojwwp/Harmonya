@@ -24,10 +24,10 @@ export const App = () => {
       <Benefits />
       <Testimonials />
       <BeforeAfter />
-      {/* <Faq />
+      <Faq />
       <Pricing />
       <Contact />
-      <Footer /> */}
+      <Footer />
     </>
   );
 };
