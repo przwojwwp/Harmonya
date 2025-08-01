@@ -1,0 +1,21 @@
+.testimonial-slide {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+.dot {
+  cursor: pointer;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.active {
+  background-color: #d7b04d;
+}

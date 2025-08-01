@@ -6,6 +6,7 @@ export const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const testimonials = [
     {
+      id: "anna-kowalska",
       text: `
       Współpraca z Harmonya Agency całkowicie odmieniła mój biznes.
       Ich holistyczne podejście do marketingu pozwoliło mi dotrzeć do nowej grupy klientów,
@@ -14,6 +15,7 @@ export const Testimonials = () => {
       role: `Studio Jogi "Spokój"`,
     },
     {
+      id: "marek-nowak",
       text: `
       Najbardziej cenię ich zaangażowanie i zrozumienie specyfiki branży wellness.
       Czuję, że mój marketing jest w dobrych rękach, a ja mogę skupić się na pracy z klientami,
@@ -22,6 +24,7 @@ export const Testimonials = () => {
       role: `Centrum Holistyczne "Harmonia"`,
     },
     {
+      id: "karolina-wisniewska",
       text: `
       Efekty naszej współpracy przerosły moje oczekiwania.
       W ciągu 3 miesięcy liczba klientów wzrosła o 40%, a moja marka
@@ -32,7 +35,7 @@ export const Testimonials = () => {
   ];
 
   const prevSlide = () => {
-    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev - 1));
+    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
@@ -53,20 +56,22 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div className={styles["testimonials-wrapper"]}>
+        <div
+          className={styles["testimonials-wrapper"]}
+          data-aos="fade-up"
+          data-aos-delay={300}
+        >
           <div
             className={styles["testimonials-slider"]}
             id="testimonialsSlider"
           >
             {testimonials.map((item, index) => (
               <div
-                key={index}
+                key={`testimonial+${item.id}`}
                 className={cn(
                   styles["testimonial-slide"],
                   index !== activeIndex && styles.hidden
                 )}
-                data-aos="fade-up"
-                data-aos-delay={300}
               >
                 <div className={styles["testimonial-content"]}>
                   <div className={styles["testimonial-text"]}>
@@ -104,6 +109,7 @@ export const Testimonials = () => {
             <div className={styles["testimonial-dots"]} id="testimonialDots">
               {testimonials.map((_, index) => (
                 <span
+                  key={`dot+${index}`}
                   className={cn(
                     styles.dot,
                     index === activeIndex && styles.active
