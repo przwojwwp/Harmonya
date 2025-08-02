@@ -75,22 +75,29 @@ export const Testimonials = () => {
               >
                 <div className={styles["testimonial-content"]}>
                   <div className={styles["testimonial-text"]}>
-                    <div className={styles["testimonial-text"]}>
-                      <i
-                        className={cn(
-                          "fas",
-                          "fa-quote-left",
-                          styles["quote-icon"]
-                        )}
-                      ></i>
-                      <p>{item.text}</p>
-                      <div className={styles["testimonial-author"]}>
-                        <h4>{item.author}</h4>
-                        <p>{item.role}</p>
-                      </div>
-                    </div>
+                    <i
+                      className={cn(
+                        "fas",
+                        "fa-quote-left",
+                        styles["quote-icon"]
+                      )}
+                    ></i>
+                    <p>{item.text}</p>
+                    <i
+                      className={cn(
+                        "fas",
+                        "fa-quote-right",
+                        styles["quote-icon"]
+                      )}
+                    ></i>
+                  </div>
+                  <div className={styles["testimonial-person"]}>
                     <div className={styles["testimonial-image"]}>
-                      <img src="/api/placeholder/300/300" alt={item.author} />
+                      <img src="img/me.jpeg" alt={item.author} />
+                    </div>
+                    <div className={styles["testimonial-author"]}>
+                      <h4>{item.author}</h4>
+                      <p>{item.role}</p>
                     </div>
                   </div>
                 </div>
@@ -128,7 +135,7 @@ export const Testimonials = () => {
           </div>
         </div>
 
-        <div
+        {/* <div
           className={styles["video-testimonial"]}
           data-aos="fade-up"
           data-aos-delay="300"
@@ -142,7 +149,7 @@ export const Testimonials = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
