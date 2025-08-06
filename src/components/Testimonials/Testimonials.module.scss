@@ -3,22 +3,32 @@ p {
   margin-bottom: 0;
 }
 
-.testimonials-wrapper {
+.testimonials-slider {
   position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.testimonials-track {
+  display: flex;
+  transition: transform 0.7s ease;
+  will-change: transform;
+
+  &.no-transition {
+    transition: none;
+  }
 }
 
 .testimonial-slide {
-  transition: opacity 0.5s ease-in-out;
-}
-
-.hidden {
-  display: none;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .testimonial-content {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  height: 300px;
 }
 
 .testimonial-text {
@@ -51,14 +61,42 @@ p {
   height: auto;
 }
 
+.testimonial-author {
+  text-align: center;
+}
+
 .testimonial-controls {
   position: absolute;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
+}
+
+.testimonial-arrow {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: $color-text-light;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transition: $transition-default;
+      background-color: $color-primary;
+      cursor: pointer;
+    }
+  }
+}
+
+.testimonial-dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .dot {

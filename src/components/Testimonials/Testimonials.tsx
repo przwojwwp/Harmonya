@@ -1,38 +1,51 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Testimonials.module.scss";
 import cn from "classnames";
 
-export const Testimonials = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const testimonials = [
-    {
-      id: "anna-kowalska",
-      text: `
+const testimonials = [
+  {
+    id: "anna-kowalska",
+    text: `
       Współpraca z Harmonya Agency całkowicie odmieniła mój biznes.
       Ich holistyczne podejście do marketingu pozwoliło mi dotrzeć do nowej grupy klientów,
       a moje social media w końcu wyglądają profesjonalnie i spójnie.`,
-      author: "Anna Kowalska",
-      role: `Studio Jogi "Spokój"`,
-    },
-    {
-      id: "marek-nowak",
-      text: `
+    author: "Anna Kowalska",
+    role: `Studio Jogi "Spokój"`,
+  },
+  {
+    id: "marek-nowak",
+    text: `
       Najbardziej cenię ich zaangażowanie i zrozumienie specyfiki branży wellness.
       Czuję, że mój marketing jest w dobrych rękach, a ja mogę skupić się na pracy z klientami,
       zamiast martwić się o Instagram czy newslettery.`,
-      author: "Marek Nowak",
-      role: `Centrum Holistyczne "Harmonia"`,
-    },
-    {
-      id: "karolina-wisniewska",
-      text: `
+    author: "Marek Nowak",
+    role: `Centrum Holistyczne "Harmonia"`,
+  },
+  {
+    id: "karolina-wisniewska",
+    text: `
       Efekty naszej współpracy przerosły moje oczekiwania.
       W ciągu 3 miesięcy liczba klientów wzrosła o 40%, a moja marka
       zyskała wyrazisty charakter i rozpoznawalność wśród odbiorców.`,
-      author: "Karolina Wiśniewska",
-      role: `Gabinet Naturalnej Terapii "Natura"`,
-    },
-  ];
+    author: "Karolina Wiśniewska",
+    role: `Gabinet Naturalnej Terapii "Natura"`,
+  },
+];
+
+const adjustedTestimonials = [...testimonials, testimonials[0]];
+
+export const Testimonials = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (activeIndex !== adjustedTestimonials.length - 1) return;
+
+    const timeout = setTimeout(() => {
+      setActiveIndex(0);
+    }, 700);
+
+    return () => clearTimeout(timeout);
+  }, [activeIndex]);
 
   const prevSlide = () => {
     setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
@@ -57,21 +70,23 @@ export const Testimonials = () => {
         </div>
 
         <div
-          className={styles["testimonials-wrapper"]}
+          className={cn(styles["testimonials-slider"], {
+            [styles["no-transition"]]: activeIndex === 0,
+          })}
           data-aos="fade-up"
           data-aos-delay={300}
         >
           <div
-            className={styles["testimonials-slider"]}
+            className={cn(styles["testimonials-track"], {
+              [styles["no-transition"]]: activeIndex === 0,
+            })}
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             id="testimonialsSlider"
           >
-            {testimonials.map((item, index) => (
+            {adjustedTestimonials.map((item) => (
               <div
                 key={`testimonial+${item.id}`}
-                className={cn(
-                  styles["testimonial-slide"],
-                  index !== activeIndex && styles.hidden
-                )}
+                className={styles["testimonial-slide"]}
               >
                 <div className={styles["testimonial-content"]}>
                   <div className={styles["testimonial-text"]}>
