@@ -29,7 +29,7 @@ const testimonials = [
   },
 ];
 
-const adjustedTestimonials = [
+const wrappedTestimonials = [
   testimonials[testimonials.length - 1],
   ...testimonials,
   testimonials[0],
@@ -37,87 +37,102 @@ const adjustedTestimonials = [
 
 export const Testimonials = () => {
   const [visibleIndex, setVisibleIndex] = useState(1);
+  const [sliderDirection, setSliderDirection] = useState<"next" | "previous">(
+    "next"
+  );
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [isTransitionComplete, setIsTransitionComplete] = useState(true);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const startSlider = () => {
+  const startSlider = (sliderDirection?: string) => {
     if (intervalRef.current) clearInterval(intervalRef.current);
 
     intervalRef.current = setInterval(() => {
-      handleNext();
+      if (sliderDirection === "previous") {
+        setSliderDirection("previous");
+        handlePrev();
+      } else {
+        setSliderDirection("next");
+        handleNext();
+      }
     }, 5000);
   };
 
   useEffect(() => {
-    startSlider();
+    startSlider(sliderDirection);
     return () => clearInterval(intervalRef.current!);
   }, []);
 
   useEffect(() => {
-    if (visibleIndex === adjustedTestimonials.length - 1) {
-      const timeout = setTimeout(() => {
-        setIsTransitioning(false);
-        setVisibleIndex(1);
-      }, 600);
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        clearInterval(intervalRef.current!);
+      } else {
+        startSlider(sliderDirection);
+      }
+    };
 
-      return () => clearTimeout(timeout);
-    } else {
-      setIsTransitioning(true);
-    }
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
-    if (visibleIndex === 0) {
-      const timeout = setTimeout(() => {
-        setIsTransitioning(false);
-        setVisibleIndex(adjustedTestimonials.length - 2);
-      }, 600);
-
-      return () => clearTimeout(timeout);
-    } else {
-      setIsTransitioning(true);
-    }
-  }, [visibleIndex]);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [sliderDirection]);
 
   const handleNext = () => {
-    if (isTransitionComplete) {
-      setIsTransitionComplete(false);
-      setVisibleIndex((prev) => prev + 1);
-      startSlider();
-      setTimeout(() => {
-        setIsTransitionComplete(true);
-      }, 800);
-    } else {
-      return;
-    }
-    console.log(visibleIndex);
-    console.log(realIndex);
+    if (!isTransitionComplete) return;
+
+    setSliderDirection("next");
+    setIsTransitionComplete(false);
+    setIsTransitioning(true);
+    setVisibleIndex((prev) => prev + 1);
+    startSlider("next");
+
+    setTimeout(() => {
+      setIsTransitionComplete(true);
+    }, 700);
   };
 
   const handlePrev = () => {
-    if (isTransitionComplete) {
-      setIsTransitionComplete(false);
-      setVisibleIndex((prev) => prev - 1);
-      startSlider();
-      setTimeout(() => {
-        setIsTransitionComplete(true);
-      }, 800);
-    } else {
-      return;
-    }
+    if (!isTransitionComplete) return;
 
-    console.log(visibleIndex);
-    console.log(realIndex);
+    setSliderDirection("previous");
+    setIsTransitionComplete(false);
+    setIsTransitioning(true);
+    setVisibleIndex((prev) => prev - 1);
+    startSlider("previous");
+
+    setTimeout(() => {
+      setIsTransitionComplete(true);
+    }, 700);
   };
 
   const goTo = (index: number) => {
-    setVisibleIndex(index + 1);
+    if (!isTransitionComplete) return;
+
+    const direction = index + 1 > visibleIndex ? "next" : "previous";
+    setSliderDirection(direction);
+
+    setIsTransitionComplete(false);
     setIsTransitioning(true);
-    startSlider();
+    setVisibleIndex(index + 1);
+    startSlider(direction);
+
+    setTimeout(() => {
+      setIsTransitionComplete(true);
+    }, 700);
   };
 
   const realIndex = (() => {
-    if (visibleIndex === 0) return testimonials.length - 1;
-    if (visibleIndex === adjustedTestimonials.length - 1) return 0;
+    if (visibleIndex === 0) {
+      return testimonials.length - 1;
+    }
+    if (
+      visibleIndex === wrappedTestimonials.length - 1 ||
+      visibleIndex > wrappedTestimonials.length - 1
+    ) {
+      return 0;
+    }
     return visibleIndex - 1;
   })();
 
@@ -141,8 +156,17 @@ export const Testimonials = () => {
               [styles["no-transition"]]: !isTransitioning,
             })}
             style={{ transform: `translateX(-${visibleIndex * 100}%)` }}
+            onTransitionEnd={() => {
+              if (visibleIndex === 0) {
+                setIsTransitioning(false);
+                setVisibleIndex(wrappedTestimonials.length - 2);
+              } else if (visibleIndex === wrappedTestimonials.length - 1) {
+                setIsTransitioning(false);
+                setVisibleIndex(1);
+              }
+            }}
           >
-            {adjustedTestimonials.map((item, i) => (
+            {wrappedTestimonials.map((item, i) => (
               <div
                 key={`testimonial+${item.id}+${i}`}
                 className={styles["testimonial-slide"]}
@@ -194,7 +218,10 @@ export const Testimonials = () => {
                     styles.dot,
                     index === realIndex && styles.active
                   )}
-                  onClick={() => goTo(index)}
+                  onClick={() => {
+                    console.log(index);
+                    goTo(index);
+                  }}
                 ></span>
               ))}
             </div>
