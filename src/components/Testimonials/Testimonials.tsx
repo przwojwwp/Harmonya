@@ -52,7 +52,7 @@ export const Testimonials = () => {
       className={cn(styles.testimonials, styles.section)}
     >
       <div className="container">
-        <div className="section-title">
+        <div className="section-title" data-aos="fade-up">
           <h2>Co mówią nasi klienci</h2>
           <p>
             Zobacz, jak współpraca z nami wpłynęła na rozwój biznesów naszych
@@ -60,7 +60,7 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div className={styles["testimonials-slider"]}>
+        <div className={styles["testimonials-slider"]} data-aos="fade-up">
           <div
             className={cn(styles["testimonials-track"], {
               [styles["no-transition"]]: !isTransitioning,
