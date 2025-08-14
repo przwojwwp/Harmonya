@@ -37,29 +37,14 @@ const wrappedTestimonials = [
 
 export const Testimonials = () => {
   const [visibleIndex, setVisibleIndex] = useState(1);
-  const [sliderDirection, setSliderDirection] = useState<"next" | "previous">(
-    "next"
-  );
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [isTransitionComplete, setIsTransitionComplete] = useState(true);
+
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const startSlider = (sliderDirection?: string) => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-
-    intervalRef.current = setInterval(() => {
-      if (sliderDirection === "previous") {
-        setSliderDirection("previous");
-        handlePrev();
-      } else {
-        setSliderDirection("next");
-        handleNext();
-      }
-    }, 5000);
-  };
+  const sliderDirectionRef = useRef<"next" | "previous">("next");
 
   useEffect(() => {
-    startSlider(sliderDirection);
+    startSlider(sliderDirectionRef.current);
     return () => clearInterval(intervalRef.current!);
   }, []);
 
@@ -68,7 +53,7 @@ export const Testimonials = () => {
       if (document.hidden) {
         clearInterval(intervalRef.current!);
       } else {
-        startSlider(sliderDirection);
+        startSlider(sliderDirectionRef.current);
       }
     };
 
@@ -77,45 +62,32 @@ export const Testimonials = () => {
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [sliderDirection]);
+  }, []);
 
-  const handleNext = () => {
-    if (!isTransitionComplete) return;
+  const startSlider = (direction: "next" | "previous" = "next") => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
 
-    setSliderDirection("next");
-    setIsTransitionComplete(false);
-    setIsTransitioning(true);
-    setVisibleIndex((prev) => prev + 1);
-    startSlider("next");
-
-    setTimeout(() => {
-      setIsTransitionComplete(true);
-    }, 700);
+    intervalRef.current = setInterval(() => {
+      if (sliderDirectionRef.current === "previous") {
+        handlePrev();
+      } else {
+        handleNext();
+      }
+    }, 1000);
   };
 
-  const handlePrev = () => {
+  const slideToIndex = (
+    index: number,
+    direction: "next" | "previous" = "next",
+    absolute: boolean = false
+  ) => {
     if (!isTransitionComplete) return;
 
-    setSliderDirection("previous");
+    sliderDirectionRef.current = direction;
     setIsTransitionComplete(false);
     setIsTransitioning(true);
-    setVisibleIndex((prev) => prev - 1);
-    startSlider("previous");
 
-    setTimeout(() => {
-      setIsTransitionComplete(true);
-    }, 700);
-  };
-
-  const goTo = (index: number) => {
-    if (!isTransitionComplete) return;
-
-    const direction = index + 1 > visibleIndex ? "next" : "previous";
-    setSliderDirection(direction);
-
-    setIsTransitionComplete(false);
-    setIsTransitioning(true);
-    setVisibleIndex(index + 1);
+    absolute ? setVisibleIndex(index) : setVisibleIndex((prev) => prev + index);
     startSlider(direction);
 
     setTimeout(() => {
@@ -123,16 +95,17 @@ export const Testimonials = () => {
     }, 700);
   };
 
+  const handleNext = () => slideToIndex(1, "next");
+  const handlePrev = () => slideToIndex(-1, "previous");
+
+  const goTo = (index: number) => {
+    const direction = index + 1 > visibleIndex ? "next" : "previous";
+    slideToIndex(index + 1, direction, true);
+  };
+
   const realIndex = (() => {
-    if (visibleIndex === 0) {
-      return testimonials.length - 1;
-    }
-    if (
-      visibleIndex === wrappedTestimonials.length - 1 ||
-      visibleIndex > wrappedTestimonials.length - 1
-    ) {
-      return 0;
-    }
+    if (visibleIndex === 0) return testimonials.length - 1;
+    if (visibleIndex >= wrappedTestimonials.length - 1) return 0;
     return visibleIndex - 1;
   })();
 
@@ -219,7 +192,6 @@ export const Testimonials = () => {
                     index === realIndex && styles.active
                   )}
                   onClick={() => {
-                    console.log(index);
                     goTo(index);
                   }}
                 ></span>
