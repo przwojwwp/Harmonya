@@ -1,4 +1,5 @@
 import { faq } from "./faqData";
+import styles from "./Faq.module.scss";
 
 export const Faq = () => {
   return (
@@ -19,11 +20,14 @@ export const Faq = () => {
               data-aos="fade-up"
             >
               <div className="faq-question">
-                <h3>{question.question}</h3>
-                <i className="fas fa-plus"></i>
+                <h3 className={styles.question}>
+                  {question.question}
+                  <br />
+                  <i className="fas fa-plus"></i>
+                </h3>
               </div>
               <div className="faq-answer">
-                <p>{question.answer}</p>
+                <p className={styles.answer}>{question.answer}</p>
               </div>
             </div>
           ))}
