@@ -19,7 +19,7 @@ export const Benefits = () => {
               key={`${benefit.id}+${index}`}
               className={styles["benefit-item"]}
               data-aos="fade-up"
-              data-aos-delay={(index + 1) * 100}
+              data-aos-delay={100 + (index % 3) * 100}
             >
               <div className={styles["benefit-icon"]}>
                 <i className={benefit.icon}></i>
