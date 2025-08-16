@@ -30,7 +30,7 @@
   padding: $padding;
   border-radius: 15px;
   transition: $transition-default;
-  border: 1px solid $color-border-muted;
+  border: 3px solid $color-border-muted;
 }
 
 @mixin card-hover {

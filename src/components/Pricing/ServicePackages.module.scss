@@ -15,7 +15,6 @@
   height: 100%;
   box-sizing: content-box;
   overflow: hidden;
-  z-index: 2;
 
   &:hover {
     @include card-hover;
@@ -32,13 +31,13 @@
     transparent,
     $color-primary-rgba
   );
-  z-index: 2;
 
   &:hover {
     @include card-hover;
   }
 }
 
+// maybe in future use
 // &::before {
 //   content: "";
 //   position: absolute;
