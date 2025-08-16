@@ -21,9 +21,9 @@ export const Faq = () => {
             >
               <div className="faq-question">
                 <h3 className={styles.question}>
-                  {question.question}
+                  <i className="fas fa-comment-dots"></i>
                   <br />
-                  <i className="fas fa-plus"></i>
+                  {question.question}
                 </h3>
               </div>
               <div className="faq-answer">
