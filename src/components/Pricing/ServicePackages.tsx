@@ -18,7 +18,11 @@ export const ServicePackages = () => {
           {servicePackages.map((servicePackage, index) => (
             <div
               key={`${servicePackage.id}+${index}`}
-              className={styles.card}
+              className={
+                servicePackage.recommendation === true
+                  ? styles["card-recommended"]
+                  : styles.card
+              }
               data-aos="fade-up"
               data-aos-delay={100 + (index % 3) * 100}
             >

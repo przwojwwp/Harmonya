@@ -4,20 +4,20 @@ import styles from "./Header.module.scss";
 export const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!headerRef.current) return;
-      if (window.scrollY > 50) {
-        headerRef.current.classList.add(styles["header-scrolled"]);
-      } else {
-        headerRef.current.classList.remove(styles["header-scrolled"]);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!headerRef.current) return;
+  //     if (window.scrollY > 50) {
+  //       headerRef.current.classList.add(styles["header-scrolled"]);
+  //     } else {
+  //       headerRef.current.classList.remove(styles["header-scrolled"]);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <header id="header" ref={headerRef} className={styles.header}>

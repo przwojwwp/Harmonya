@@ -14,10 +14,8 @@
 }
 
 .benefit-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px $color-shadow-hover;
-  border-color: $color-primary;
-  cursor: pointer;
+  @include card-hover;
+  transform: translateY(-30px) !important;
 }
 
 .benefit-icon {

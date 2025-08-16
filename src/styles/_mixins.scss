@@ -32,3 +32,9 @@
   transition: $transition-default;
   border: 1px solid $color-border-muted;
 }
+
+@mixin card-hover {
+  box-shadow: 0 15px 40px $color-shadow-hover;
+  border-color: $color-primary;
+  cursor: pointer;
+}

@@ -5,6 +5,7 @@
 }
 
 .card {
+  @include card-style(10px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,13 +13,46 @@
   align-self: start;
   width: 100%;
   height: 100%;
-  border: 1px solid white;
-  padding: 10px;
-  border-radius: 15px;
   box-sizing: content-box;
+  overflow: hidden;
+  z-index: 2;
+
+  &:hover {
+    @include card-hover;
+  }
 }
 
-.header {
+.card-recommended {
+  @extend .card;
+  position: relative;
+  border-color: $color-primary-rgba;
+  background: linear-gradient(
+    135deg,
+    $color-primary-rgba,
+    transparent,
+    $color-primary-rgba
+  );
+  z-index: 2;
+
+  &:hover {
+    @include card-hover;
+  }
+}
+
+// &::before {
+//   content: "";
+//   position: absolute;
+//   top: -50%;
+//   left: -50%;
+//   width: 250%;
+//   height: 250%;
+//   background: linear-gradient(180deg, $color-primary-rgba, transparent);
+//   transform: rotate(-45deg);
+//   // animation: shine 3s linear infinite reverse;
+//   z-index: 0;
+// }
+
+.card- .header {
   display: flex;
   flex-direction: column;
   align-items: center;

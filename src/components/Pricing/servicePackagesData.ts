@@ -1,6 +1,7 @@
 export const servicePackages = [
   {
     icon: "fas fa-peace",
+    recommendation: false,
     title: "Kampania Reklamowa",
     price: 1599,
     period: "kampania",
@@ -20,6 +21,7 @@ export const servicePackages = [
   },
   {
     icon: "fas fa-seedling",
+    recommendation: false,
     title: "Social Media",
     price: 1999,
     period: "miesiąc",
@@ -45,6 +47,7 @@ export const servicePackages = [
 
   {
     icon: "fas fa-spa",
+    recommendation: true,
     title: "Holistyczna Strategia Widoczności",
     price: 3499,
     period: "miesiąc",
