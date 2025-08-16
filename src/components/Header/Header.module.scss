@@ -9,6 +9,7 @@
   background-color: $color-black;
 }
 
+// maybe for future use
 // .header-scrolled {
 //   background-color: $color-header-scroll;
 //   box-shadow: 0 5px 20px $color-shadow-header;
@@ -22,6 +23,7 @@
 }
 
 .logo {
+  height: 50px;
   display: inline-block;
 }
 
@@ -29,6 +31,7 @@
   height: 50px;
   width: auto;
   transition: $transition-default;
+  transform: translateY(5%);
 }
 
 .logo-image-scrolled {
