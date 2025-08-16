@@ -20,7 +20,7 @@ export const ServicePackages = () => {
               key={`${servicePackage.id}+${index}`}
               className={styles.card}
               data-aos="fade-up"
-              data-aos-delay="100"
+              data-aos-delay={100 + (index % 3) * 100}
             >
               <div className={styles.header}>
                 <div className={styles.icon}>
@@ -69,11 +69,7 @@ export const ServicePackages = () => {
           ))}
         </div>
 
-        <div
-          className="service-packages-info"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
+        <div className={styles.info} data-aos="fade-up" data-aos-delay="400">
           <p>
             Wszystkie pakiety zawierają 3-miesięczny minimalny okres współpracy.
             Możliwość dostosowania pakietów do indywidualnych potrzeb.
