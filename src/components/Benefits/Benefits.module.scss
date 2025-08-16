@@ -10,19 +10,18 @@
 }
 
 .benefit-item {
-  background-color: rgba(13, 13, 13, 0.5);
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: $transition-default;
-  border: 1px solid rgba(130, 135, 142, 0.1);
+  border: 1px solid $color-border-muted;
   text-align: center;
 }
 
 .benefit-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(215, 176, 77, 0.1);
+  box-shadow: 0 15px 40px $color-shadow-hover;
   border-color: $color-primary;
+  cursor: pointer;
 }
 
 .benefit-icon {
