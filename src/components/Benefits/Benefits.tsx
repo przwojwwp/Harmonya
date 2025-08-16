@@ -17,7 +17,7 @@ export const Benefits = () => {
           {benefits.map((benefit, index) => (
             <div
               key={`${benefit.id}+${index}`}
-              className={styles["benefit-item"]}
+              className={styles["benefit-card"]}
               data-aos="fade-up"
               data-aos-delay={100 + (index % 3) * 100}
             >

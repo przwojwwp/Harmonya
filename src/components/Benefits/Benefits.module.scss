@@ -9,15 +9,11 @@
   gap: 40px;
 }
 
-.benefit-item {
-  padding: 30px;
-  border-radius: 15px;
-  transition: $transition-default;
-  border: 1px solid $color-border-muted;
-  text-align: center;
+.benefit-card {
+  @include card-style;
 }
 
-.benefit-item:hover {
+.benefit-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px $color-shadow-hover;
   border-color: $color-primary;
