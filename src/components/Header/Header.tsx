@@ -44,7 +44,7 @@ export const Header = () => {
               <a href="#faq">FAQ</a>
             </li>
             <li>
-              <a href="#pricing">Oferta</a>
+              <a href="#service-packages">Oferta</a>
             </li>
           </ul>
           <div className={styles["mobile-toggle"]}>
