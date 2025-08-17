@@ -27,6 +27,7 @@
   margin: 15px auto;
   font-size: 1rem;
   font-weight: 700;
+  font-family: inherit;
   color: $color-primary;
   background-color: $color-field-bg;
   background-clip: padding-box;
@@ -38,7 +39,8 @@
 }
 
 .contact-form textarea {
-  height: 200px;
+  height: 150px;
+  font-size: 1rem;
 }
 
 // AUTOFILL (Chrome/Edge/Safari)
