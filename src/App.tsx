@@ -9,7 +9,7 @@ import { Faq } from "./components/Faq";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { ServicePackages } from "./components/Pricing";
+import { ServicePackages } from "./components/ServicePackages";
 import { Testimonials } from "./components/Testimonials";
 
 export const App = () => {
