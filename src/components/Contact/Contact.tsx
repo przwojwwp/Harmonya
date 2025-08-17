@@ -1,4 +1,3 @@
-import React from "react";
 import cn from "classnames";
 import styles from "./Contact.module.scss";
 
@@ -17,32 +16,38 @@ export const Contact = () => {
         <div className={styles.wrapper} data-aos="fade-up" data-aos-delay="100">
           <div className={styles["form-col"]}>
             <form id="contact-form" className={styles["contact-form"]}>
-              <div className={styles["form-row"]}>
-                <div className={styles["form-group"]}>
-                  <label htmlFor="name">Imię i nazwisko*</label>
-                  <input type="text" id="name" name="name" required />
-                </div>
-                <div className={styles["form-group"]}>
-                  <label htmlFor="email">Email*</label>
-                  <input type="email" id="email" name="email" required />
-                </div>
-              </div>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
 
-              <div className={styles["form-row"]}>
-                <div className={styles["form-group"]}>
-                  <label htmlFor="phone">Telefon</label>
-                  <input type="tel" id="phone" name="phone" />
-                </div>
-                <div className={styles["form-group"]}>
-                  <label htmlFor="company">Nazwa firmy*</label>
-                  <input type="text" id="company" name="company" required />
-                </div>
-              </div>
+              <input type="tel" id="phone" name="phone" placeholder="Phone" />
 
-              <div className={styles["form-group"]}>
-                <label htmlFor="message">Wiadomość*</label>
-                <textarea id="message" name="message" rows={5} required />
-              </div>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Company"
+                required
+              />
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message"
+                rows={5}
+                required
+              />
 
               <div
                 className={cn(styles["form-group"], styles["form-checkbox"])}

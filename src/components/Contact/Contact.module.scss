@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+}
+
+.form-col {
+  width: 50%;
+}
+
+.info-col {
+  width: 50%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 80%;
+  height: 50px;
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid $color-text-muted;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $color-primary;
+  background-color: transparent;
+}

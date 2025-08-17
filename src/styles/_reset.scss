@@ -1,5 +1,9 @@
 @use "./shared.scss" as *;
 
+:root {
+  font-size: $rem-base;
+}
+
 *,
 *::before,
 *::after {
