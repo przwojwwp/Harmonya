@@ -44,7 +44,7 @@ export const Contact = () => {
               <textarea
                 id="message"
                 name="message"
-                placeholder="Message"
+                placeholder="Tell me about your business"
                 rows={5}
                 required
               />

@@ -32,13 +32,13 @@
   letter-spacing: $letter-spacing-wide;
 
   &:hover {
-    background-color: transparent;
+    background-color: $color-field-bg;
     color: $color-primary;
   }
 }
 
 .btn-outline {
-  background-color: transparent;
+  background-color: $color-field-bg;
   color: $color-primary;
 
   &:hover {

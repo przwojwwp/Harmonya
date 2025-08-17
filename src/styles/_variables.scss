@@ -4,12 +4,13 @@ $color-primary: #d7b04d;
 $color-text-light: #ffffff;
 $color-text-muted: #82878e;
 $color-black: #000000;
+$color-field-bg: transparent;
 
 // === SEMI-TRANSPARENT COLORS ===
 $color-primary-rgba: rgba(215, 176, 77, 0.4);
 $color-bg-overlay: rgba(13, 13, 13, 0.85);
 $color-header-scroll: rgba(13, 13, 13, 0.95);
-$color-border-muted: rgba(130, 135, 142, 0.1);
+$color-border-muted: rgba(130, 135, 142, 0.5);
 $color-shadow-hover: rgba(215, 176, 77, 0.1);
 $color-shadow-dark: rgba(0, 0, 0, 0.2);
 $color-shadow-header: rgba(0, 0, 0, 0.3);

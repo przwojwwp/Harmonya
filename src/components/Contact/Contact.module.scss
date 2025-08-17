@@ -15,15 +15,51 @@
   flex-direction: column;
 }
 
-input {
-  width: 80%;
+// BAZA
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  @include card-style(15px);
+  box-sizing: border-box;
+  width: 70%;
   height: 50px;
-  padding: 15px;
-  margin: 15px;
-  border: 1px solid $color-text-muted;
-  border-radius: 15px;
-  font-size: 1.5rem;
-  font-weight: bold;
+  margin: 15px auto;
+  font-size: 1rem;
+  font-weight: 700;
   color: $color-primary;
-  background-color: transparent;
+  background-color: $color-field-bg;
+  background-clip: padding-box;
+  text-align: left;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.contact-form textarea {
+  height: 200px;
+}
+
+// AUTOFILL (Chrome/Edge/Safari)
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill,
+.contact-form select:-webkit-autofill {
+  -webkit-text-fill-color: $color-primary;
+  caret-color: $color-primary;
+  box-shadow: 0 0 0 1000px $color-field-bg inset !important;
+  transition: background-color 9999s ease-out, color 9999s ease-out;
+}
+
+// AUTOFILL (Firefox)
+.contact-form input:-moz-autofill,
+.contact-form textarea:-moz-autofill {
+  -moz-text-fill-color: $color-primary;
+  box-shadow: 0 0 0 1000px $color-field-bg inset;
+}
+
+// FOCUS ring
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  border-color: $color-primary;
 }
