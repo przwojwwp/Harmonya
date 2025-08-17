@@ -23,7 +23,8 @@ export const App = () => {
       <Hero />
       <Benefits />
       <Testimonials />
-      <BeforeAfter />
+      {/* For Future Implementation */}
+      {/* <BeforeAfter /> */}
       <Faq />
       <ServicePackages />
       <Contact />
