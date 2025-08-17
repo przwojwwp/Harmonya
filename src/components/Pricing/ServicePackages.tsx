@@ -49,11 +49,6 @@ export const ServicePackages = () => {
                       {excludeService}
                     </li>
                   ))}
-                  {servicePackage.additionalCost?.map((additionalcost) => (
-                    <li className={styles.additional}>
-                      <i className={"fas"}>*</i> {additionalcost}
-                    </li>
-                  ))}
                 </ul>
               </div>
               <div>
