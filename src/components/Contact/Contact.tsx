@@ -67,7 +67,7 @@ export const Contact = () => {
                 </label>
               </div>
 
-              <button type="submit" className={styles["submit-btn"]}>
+              <button type="submit" className={"btn"}>
                 Wyślij zapytanie
               </button>
             </form>
