@@ -6,10 +6,6 @@
   width: 50%;
 }
 
-.info-col {
-  width: 50%;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -117,3 +113,24 @@
   }
 }
 
+.info-col {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.contact-item {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.contact-item h3 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.contact-item p {
+  font-size: 24px;
+}

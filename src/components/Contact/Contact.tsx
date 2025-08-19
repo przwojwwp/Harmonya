@@ -20,7 +20,7 @@ export const Contact = () => {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Name*"
+                placeholder="Imię*"
                 pattern="[A-Za-zÀ-ž\s]+"
                 title="Only letters and spaces"
                 required
@@ -38,7 +38,7 @@ export const Contact = () => {
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="Phone*"
+                placeholder="Telefon*"
                 inputMode="numeric"
                 pattern="[0-9]+"
                 title="Only numbers"
@@ -49,7 +49,7 @@ export const Contact = () => {
                 type="text"
                 id="company"
                 name="company"
-                placeholder="Company"
+                placeholder="Firma"
               />
 
               <textarea
@@ -76,7 +76,9 @@ export const Contact = () => {
           <div className={styles["info-col"]}>
             <div className={styles["contact-item"]}>
               <i className="fas fa-envelope" aria-hidden="true"></i>
+
               <h3>Email</h3>
+
               <p>
                 <a href="mailto:kontakt@harmonya.pl">kontakt@harmonya.pl</a>
               </p>
@@ -94,9 +96,11 @@ export const Contact = () => {
               <i className="fas fa-map-marker-alt" aria-hidden="true"></i>
               <h3>Adres</h3>
               <p>
-                ul. Harmonijna 42
+                {/* ul. Harmonijna 42 */}
+                Tymczasowo
                 <br />
-                00-001 Warszawa
+                {/* 00-001 Warszawa */}
+                Niedostępny
               </p>
             </div>
           </div>
