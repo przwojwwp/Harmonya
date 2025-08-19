@@ -21,6 +21,8 @@ export const Contact = () => {
                 id="name"
                 name="name"
                 placeholder="Name"
+                pattern="[A-Za-zÀ-ž\s]+"
+                title="Only letters and spaces"
                 required
               />
               <input
@@ -31,7 +33,16 @@ export const Contact = () => {
                 required
               />
 
-              <input type="tel" id="phone" name="phone" placeholder="Phone" />
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Phone"
+                inputMode="numeric"
+                pattern="[0-9]+"
+                title="Only numbers"
+                required
+              />
 
               <input
                 type="text"
