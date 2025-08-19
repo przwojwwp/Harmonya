@@ -20,16 +20,17 @@ export const Contact = () => {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Name"
+                placeholder="Name*"
                 pattern="[A-Za-zÀ-ž\s]+"
                 title="Only letters and spaces"
                 required
               />
+
               <input
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Email*"
                 required
               />
 
@@ -37,7 +38,7 @@ export const Contact = () => {
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="Phone"
+                placeholder="Phone*"
                 inputMode="numeric"
                 pattern="[0-9]+"
                 title="Only numbers"
@@ -49,7 +50,6 @@ export const Contact = () => {
                 id="company"
                 name="company"
                 placeholder="Company"
-                required
               />
 
               <textarea
@@ -57,16 +57,13 @@ export const Contact = () => {
                 name="message"
                 placeholder="Tell me about your business"
                 rows={5}
-                required
               />
 
-              <div
-                className={cn(styles["form-group"], styles["form-checkbox"])}
-              >
-                <input type="checkbox" id="privacy" name="privacy" required />
-                <label htmlFor="privacy">
+              <div className={styles["form-checkbox"]}>
+                <label htmlFor="privacy" className={styles.privacy}>
+                  <input type="checkbox" id="privacy" name="privacy" required />
                   Wyrażam zgodę na przetwarzanie moich danych osobowych w celu
-                  kontaktu.*
+                  kontaktu. *
                 </label>
               </div>
 
