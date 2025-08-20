@@ -9,6 +9,7 @@ body {
   letter-spacing: $letter-spacing-default;
   overflow-x: hidden;
   position: relative;
+  padding: $padding-sm;
 }
 
 h1,
@@ -23,22 +24,35 @@ h5 {
 }
 
 h1 {
-  font-size: $font-size-h1;
-  line-height: $line-height-heading;
+  @include respond(tablet) {
+  }
+
+  @include respond(desktop) {
+    font-size: 3.5rem;
+    line-height: $line-height-heading;
+  }
 }
 
 h2 {
-  font-size: $font-size-h2;
   color: $color-primary;
+
+  @include respond(desktop) {
+    font-size: $font-size-h2;
+  }
 }
 
 h3 {
-  font-size: $font-size-h3;
+  @include respond(desktop) {
+    font-size: $font-size-h3;
+  }
 }
 
 p {
-  margin-bottom: $spacing-md;
   color: $color-text-muted;
+
+  @include respond(desktop) {
+    margin-bottom: $spacing-md;
+  }
 }
 
 a {

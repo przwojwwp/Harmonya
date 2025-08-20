@@ -3,18 +3,20 @@
   top: 0;
   left: 0;
   display: flex;
+
   flex-direction: column;
   width: 100vw;
   height: 100vh;
   background-color: $color-background;
   font-weight: 700;
+  transform: translateX(-100%);
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5%;
+  padding: 0;
   background-color: $color-black;
 }
 
@@ -27,7 +29,7 @@
   height: 50px;
   width: auto;
   transition: $transition-default;
-  transform: translateY(12%);
+  transform: translateY(10%);
 }
 
 .close {
@@ -39,14 +41,20 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 15px 0;
 
   li {
-    padding: 15px;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+    }
   }
 }
 
 .contact {
-  position: absolute;
+  position: relative;
   bottom: 0;
   text-align: center;
   width: 100%;

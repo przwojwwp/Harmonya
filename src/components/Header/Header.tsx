@@ -64,7 +64,7 @@ export const Header = () => {
             </div>
           )}
         </nav>
-        {/* <MobileMenu /> */}
+        <MobileMenu />
       </div>
     </header>
   );

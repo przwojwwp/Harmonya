@@ -11,7 +11,7 @@ export const Hero = () => {
             data-aos="fade-right"
             data-aos-duration="1000"
           >
-            <div className={styles["hero-tagline"]}>Harmonya agency</div>
+            {/* <div className={styles["hero-tagline"]}>Harmonya agency</div> */}
             <h1>
               Tworzymy <span className="gold-text">w zgodzie</span> z Tobą
             </h1>

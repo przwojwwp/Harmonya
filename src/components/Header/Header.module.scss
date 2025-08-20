@@ -2,11 +2,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 10px 0;
   z-index: 1000;
-  transition: $transition-default;
+  width: 100%;
   background-color: $color-black;
+  transition: $transition-default;
+
+  @include respond(desktop) {
+  }
 }
 
 // maybe for future use
@@ -20,6 +22,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include respond(mobile) {
+    padding: 0 $padding-sm;
+  }
 }
 
 .logo {
@@ -32,6 +38,10 @@
   width: auto;
   transition: $transition-default;
   transform: translateY(5%);
+
+  @include respond(mobile) {
+    transform: translate(-10%, 5%);
+  }
 }
 
 .logo-image-scrolled {

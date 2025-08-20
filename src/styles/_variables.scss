@@ -20,7 +20,9 @@ $transition-default: all 0.3s ease-in-out;
 
 // === LAYOUT ===
 $container-width: 1200px;
-$container-padding: 20px;
+$padding-sm: 16px;
+$padding-md: 24px;
+$padding-lg: 32px;
 
 // === FONT FAMILIES ===
 $font-main: "Myriad Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -30,7 +32,6 @@ $font-headings: "Lucida Calligraphy", "Brush Script MT", cursive;
 
 $rem-base: 16px;
 $font-size-base: 1rem;
-$font-size-h1: 3.5rem;
 $font-size-h2: 2.5rem;
 $font-size-h3: 1.8rem;
 $font-size-small: 0.875rem;
