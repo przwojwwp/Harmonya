@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import styles from "./Header.module.scss";
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 export const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
