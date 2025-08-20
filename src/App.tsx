@@ -27,7 +27,7 @@ export const App = () => {
       {/* <BeforeAfter /> */}
       <Faq />
       {/* <ServicePackages /> */}
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </>
   );

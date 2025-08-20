@@ -83,12 +83,10 @@ p {
   border-radius: 50%;
   background-color: $color-text-light;
 
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      transition: $transition-default;
-      background-color: $color-primary;
-      cursor: pointer;
-    }
+  @include hover {
+    transition: $transition-default;
+    background-color: $color-primary;
+    cursor: pointer;
   }
 }
 

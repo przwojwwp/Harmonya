@@ -15,7 +15,7 @@
   height: 100%;
   overflow: hidden;
 
-  &:hover {
+  @include hover {
     @include card-hover;
     box-shadow: 0 0 40px;
   }
@@ -32,7 +32,7 @@
     $color-primary-rgba
   );
 
-  &:hover {
+  @include hover {
     @include card-hover;
     box-shadow: 0 0 40px;
   }

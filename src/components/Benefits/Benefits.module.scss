@@ -11,11 +11,11 @@
 
 .benefit-card {
   @include card-style;
-}
 
-.benefit-card:hover {
-  @include card-hover;
-  transform: translateY(-30px) !important;
+  @include hover {
+    @include card-hover;
+    transform: translateY(-30px) !important;
+  }
 }
 
 .benefit-icon {

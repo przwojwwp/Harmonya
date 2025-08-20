@@ -31,7 +31,7 @@
   text-transform: uppercase;
   letter-spacing: $letter-spacing-wide;
 
-  &:hover {
+  @include hover {
     background-color: $color-field-bg;
     color: $color-primary;
   }
@@ -41,7 +41,7 @@
   background-color: $color-field-bg;
   color: $color-primary;
 
-  &:hover {
+  @include hover {
     background-color: $color-primary;
     color: $color-background;
   }

@@ -1,0 +1,54 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-background;
+  font-weight: 700;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background-color: $color-black;
+}
+
+.logo {
+  height: 50px;
+  display: inline-block;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  transition: $transition-default;
+  transform: translateY(12%);
+}
+
+.close {
+  font-size: 28px;
+  color: $color-primary;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  li {
+    padding: 15px;
+  }
+}
+
+.contact {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  border-radius: 0;
+}
