@@ -3,6 +3,7 @@ import styles from "./Header.module.scss";
 import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 export const Header = () => {
+  const breakpoint = useBreakPoint();
   const headerRef = useRef<HTMLElement>(null);
 
   // useEffect(() => {
@@ -31,29 +32,36 @@ export const Header = () => {
               className={styles["logo-image"]}
             />
           </a>
-          <ul className={styles["nav-links"]}>
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#benefits">Korzyści</a>
-            </li>
-            <li>
-              <a href="#testimonials">Opinie</a>
-            </li>
-            <li>
-              <a href="#faq">FAQ</a>
-            </li>
-            <li>
-              <a href="#service-packages">Oferta</a>
-            </li>
-          </ul>
-          <div className={styles["mobile-toggle"]}>
-            <i className="fas fa-bars"></i>
-          </div>
-          <a href="#contact" className="btn">
-            Kontakt
-          </a>
+          {breakpoint === "desktop" && (
+            <>
+              <ul className={styles["nav-links"]}>
+                <li>
+                  <a href="#home">Home</a>
+                </li>
+                <li>
+                  <a href="#benefits">Korzyści</a>
+                </li>
+                <li>
+                  <a href="#testimonials">Opinie</a>
+                </li>
+                <li>
+                  <a href="#faq">FAQ</a>
+                </li>
+                <li>
+                  <a href="#service-packages">Oferta</a>
+                </li>
+              </ul>
+              <a href="#contact" className="btn">
+                Kontakt
+              </a>
+            </>
+          )}
+
+          {breakpoint === "mobile" && (
+            <div className={styles["mobile-toggle"]}>
+              <i className="fas fa-bars"></i>
+            </div>
+          )}
         </nav>
       </div>
     </header>
