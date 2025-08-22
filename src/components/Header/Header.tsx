@@ -1,9 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useRef, useState } from "react";
 import styles from "./Header.module.scss";
 import { useBreakPoint } from "@/hooks/useBreakPoint";
 import { MobileMenu } from "../MobileMenu";
+import cn from "classnames";
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const breakpoint = useBreakPoint();
   const headerRef = useRef<HTMLElement>(null);
 
@@ -52,7 +55,7 @@ export const Header = () => {
                   <a href="#service-packages">Oferta</a>
                 </li>
               </ul>
-              <a href="#contact" className="btn">
+              <a href="#contact" className={cn("btn", styles.contact)}>
                 Kontakt
               </a>
             </>
@@ -60,11 +63,14 @@ export const Header = () => {
 
           {breakpoint === "mobile" && (
             <div className={styles["mobile-toggle"]}>
-              <i className="fas fa-bars"></i>
+              <i
+                onClick={() => setIsMenuOpen(true)}
+                className="fas fa-bars"
+              ></i>
             </div>
           )}
         </nav>
-        <MobileMenu />
+        <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
     </header>
   );

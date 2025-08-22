@@ -3,20 +3,23 @@
   top: 0;
   left: 0;
   display: flex;
-
   flex-direction: column;
   width: 100vw;
   height: 100vh;
   background-color: $color-background;
   font-weight: 700;
   transform: translateX(-100%);
+
+  &.open {
+    transform: translateX(0);
+  }
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0;
+  padding: 0 16px;
   background-color: $color-black;
 }
 
@@ -29,7 +32,17 @@
   height: 50px;
   width: auto;
   transition: $transition-default;
-  transform: translateY(10%);
+  transform: translateY(5%);
+
+  @include respond(mobile) {
+    transform: translate(-10%, 5%);
+  }
+}
+
+button {
+  all: unset;
+  display: flex;
+  align-items: center;
 }
 
 .close {
@@ -54,7 +67,7 @@
 }
 
 .contact {
-  position: relative;
+  position: absolute;
   bottom: 0;
   text-align: center;
   width: 100%;

@@ -1,9 +1,15 @@
+import { useState } from "react";
 import styles from "./MobileMenu.module.scss";
 import cn from "classnames";
 
-export const MobileMenu = () => {
+interface Props {
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: Props) => {
   return (
-    <nav className={styles.navbar}>
+    <nav className={cn(styles.navbar, isMenuOpen ? styles.open : "")}>
       <div className={styles.header}>
         <a href="#" className={styles.logo}>
           <img
@@ -12,7 +18,9 @@ export const MobileMenu = () => {
             className={styles["logo-image"]}
           />
         </a>
-        <i className={cn("fas fa-xmark", styles.close)}></i>
+        <button onClick={() => setIsMenuOpen(false)}>
+          <i className={cn("fas fa-xmark", styles.close)}></i>
+        </button>
       </div>
       <ul className={styles.links}>
         <li>
