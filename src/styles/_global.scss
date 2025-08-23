@@ -1,5 +1,10 @@
 @use "./shared.scss" as *;
 
+.section {
+  padding: $section-padding 0;
+  position: relative;
+}
+
 .container {
   width: 100%;
   max-width: $container-width;
@@ -9,11 +14,6 @@
   }
 }
 
-.section {
-  padding: $section-padding 0;
-  position: relative;
-}
-
 .section-title {
   text-align: center;
   margin-bottom: $section-margin-bottom;
@@ -21,13 +21,14 @@
 
 .btn {
   display: inline-block;
+  text-align: center;
   background-color: $color-primary;
   color: $color-background;
-  padding: $btn-padding-y $btn-padding-x;
+  padding: 12px 20px;
   border: 2px solid $color-primary;
   border-radius: $radius-pill;
   font-weight: bold;
-  font-size: $btn-font-size;
+  font-size: 1rem;
   cursor: pointer;
   transition: $transition-default;
   text-transform: uppercase;

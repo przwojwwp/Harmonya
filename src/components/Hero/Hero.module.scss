@@ -1,6 +1,5 @@
 .hero {
-  height: 100vh;
-  position: relative;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   //this linear-gradient do nothing, waiting for future use
@@ -14,7 +13,7 @@
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 100%;
   position: relative;
   z-index: 1;
   display: flex;
@@ -45,9 +44,13 @@
 }
 
 .hero-image {
-  display: flex;
+  display: none;
   max-width: 360px;
   transform: translateX(5%);
+
+  @include respond(tablet) {
+    display: flex;
+  }
 
   img {
     width: 100%;

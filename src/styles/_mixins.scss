@@ -3,11 +3,11 @@
 // === MEDIA QUERIES ===
 @mixin respond($breakpoint) {
   @if $breakpoint == mobile {
-    @media (max-width: 639.9px) {
+    @media (max-width: 639px) {
       @content;
     }
   } @else if $breakpoint == tablet {
-    @media (min-width: 640px) and (max-width: 1199.99px) {
+    @media (min-width: 640px) {
       @content;
     }
   } @else if $breakpoint == desktop {

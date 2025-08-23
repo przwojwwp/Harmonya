@@ -28,6 +28,7 @@ export const Header = () => {
   return (
     <header id="header" ref={headerRef} className={styles.header}>
       <div className="container">
+        <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <nav className={styles.navbar}>
           <a href="#" className={styles.logo}>
             <img
@@ -36,7 +37,15 @@ export const Header = () => {
               className={styles["logo-image"]}
             />
           </a>
-          {breakpoint === "desktop" && (
+          {breakpoint === "mobile" && (
+            <div className={styles["mobile-toggle"]}>
+              <i
+                onClick={() => setIsMenuOpen(true)}
+                className="fas fa-bars"
+              ></i>
+            </div>
+          )}
+          {(breakpoint === "tablet" || breakpoint === "desktop") && (
             <>
               <ul className={styles["nav-links"]}>
                 <li>
@@ -60,17 +69,7 @@ export const Header = () => {
               </a>
             </>
           )}
-
-          {breakpoint === "mobile" && (
-            <div className={styles["mobile-toggle"]}>
-              <i
-                onClick={() => setIsMenuOpen(true)}
-                className="fas fa-bars"
-              ></i>
-            </div>
-          )}
         </nav>
-        <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
     </header>
   );
