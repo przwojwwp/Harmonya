@@ -1,8 +1,27 @@
 import cn from "classnames";
 import styles from "./Benefits.module.scss";
 import { benefits } from "./benefitsData";
+import { useEffect, useState } from "react";
 
 export const Benefits = () => {
+  const [colInRow, setColInRow] = useState(3);
+  const tablet = 640;
+  const desktop = 1200;
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < tablet) return setColInRow(1);
+      if (window.innerWidth < desktop) return setColInRow(2);
+      return setColInRow(3);
+    };
+
+    handleResize();
+
+    document.addEventListener("visibilitychange", handleResize);
+
+    return () => document.removeEventListener("visibilitychange", handleResize);
+  }, []);
+
   return (
     <section id="benefits" className={cn(styles.benefits, "section")}>
       <div className="container">
@@ -19,7 +38,7 @@ export const Benefits = () => {
               key={`${benefit.id}+${index}`}
               className={styles["benefit-card"]}
               data-aos="fade-up"
-              data-aos-delay={100 + (index % 3) * 100}
+              data-aos-delay={100 + (index % colInRow) * 100}
             >
               <div className={styles["benefit-icon"]}>
                 <i className={benefit.icon}></i>
