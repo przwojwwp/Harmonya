@@ -5,11 +5,14 @@
 
 .benefits-grid {
   display: grid;
-  // max-width: calc(2 * 280px + 40px);
-  // grid-template-columns: repeat(auto-fit, minmax(calc(280px - 32px), 1fr));
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: calc(2 * 280px + 40px);
+  grid-template-columns: repeat(auto-fit, minmax(calc(280px - 32px), 1fr));
   margin: 0 auto;
   gap: 40px;
+
+  @include respond(desktop) {
+    max-width: 100%;
+  }
 }
 
 .benefit-card {
