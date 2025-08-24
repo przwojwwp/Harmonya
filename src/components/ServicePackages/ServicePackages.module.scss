@@ -1,7 +1,8 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .card {
@@ -11,8 +12,8 @@
   justify-content: space-between;
   align-items: center;
   align-self: start;
-  width: 100%;
-  height: 100%;
+  flex: 1 1 288px;
+  max-width: 386.66px;
   overflow: hidden;
 
   @include hover {

@@ -14,7 +14,7 @@ export const ServicePackages = () => {
           </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.wrapper}>
           {servicePackages.map((servicePackage, index) => (
             <div
               key={`${servicePackage.id}+${index}`}
