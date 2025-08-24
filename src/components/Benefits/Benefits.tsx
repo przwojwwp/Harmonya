@@ -10,9 +10,9 @@ export const Benefits = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < tablet) return setColInRow(1);
-      if (window.innerWidth < desktop) return setColInRow(2);
-      return setColInRow(3);
+      if (window.innerWidth < tablet) return setColInRow(2);
+      if (window.innerWidth < desktop) return setColInRow(3);
+      return setColInRow(4);
     };
 
     handleResize();
