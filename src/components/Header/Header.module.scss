@@ -8,7 +8,8 @@
   background-color: $color-black;
   transition: $transition-default;
 
-  @include respond(desktop) {
+  @include respond(tablet) {
+    padding: 10px 16px;
   }
 }
 
@@ -38,11 +39,7 @@
   height: 50px;
   width: auto;
   transition: $transition-default;
-  transform: translateY(5%);
-
-  @include respond(mobile) {
-    transform: translate(-10%, 5%);
-  }
+  transform: translate(-10%, 5%);
 }
 
 .logo-image-scrolled {
