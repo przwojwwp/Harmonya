@@ -22,6 +22,7 @@ p {
 .testimonial-slide {
   min-width: 100%;
   min-height: 100%;
+  overflow: hidden;
 }
 
 .testimonial-content {
@@ -32,22 +33,30 @@ p {
 }
 
 .testimonial-text {
-  width: 40%;
+  width: 100%;
+
+  @include respond(tablet) {
+    width: 40%;
+  }
 }
 
 .testimonial-person {
-  display: flex;
+  display: none;
   width: 20%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include respond(tablet) {
+    display: flex;
+  }
 }
 
 .testimonial-image {
   position: relative;
   display: flex;
-  width: 200px;
-  height: 200px;
+  width: clamp(180px, 15vw, 200px);
+  height: clamp(180px, 15vw, 200px);
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 10px;
@@ -77,11 +86,18 @@ p {
 }
 
 .testimonial-arrow {
+  display: none;
+  justify-content: center;
   width: 48px;
   height: 48px;
   border: none;
   border-radius: 50%;
+  color: black;
   background-color: $color-text-light;
+
+  @include respond(tablet) {
+    display: flex;
+  }
 
   @include hover {
     transition: $transition-default;
