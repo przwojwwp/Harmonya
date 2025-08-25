@@ -21,10 +21,13 @@ h5 {
   font-style: italic;
   color: $color-text-light;
   margin-bottom: $spacing-lg;
+  font-weight: 700;
+  font-size-adjust: 0.53;
 }
 
 h1 {
   @include respond(tablet) {
+    font-size: 3.5rem;
   }
 
   @include respond(desktop) {

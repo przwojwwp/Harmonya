@@ -3,6 +3,11 @@
 // === FONT-FACE ===
 @font-face {
   font-family: "Lucida Calligraphy";
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js");
+  src: url("/src/assets/fonts/LCALLIG/LCALLIG.TTF") format("truetype");
   font-style: italic;
 }
+
+// @font-face {
+//   font-family: "Myriad Pro";
+//   src: url("/src//assets/fonts/MYRIADPRO/MYRIADPRO-BOLD.OTF") format("opentype");
+// }
