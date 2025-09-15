@@ -10,9 +10,11 @@
 
 .hero-wrapper {
   display: flex;
+  max-height: 100vh;
 
-  @include respond(mobile) {
+  @media screen and (max-width: 825px) {
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -35,6 +37,10 @@
 
 .hero h1 {
   margin-bottom: 1.5rem;
+
+  @media screen and (max-width: 825px) {
+    font-size: 1.5rem;
+  }
 }
 
 .hero-description {
@@ -48,7 +54,6 @@
 }
 
 .hero-image {
-  // display: none;
   max-width: 360px;
   transform: translateX(5%);
 
