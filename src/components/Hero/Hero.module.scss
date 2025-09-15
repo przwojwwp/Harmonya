@@ -10,6 +10,10 @@
 
 .hero-wrapper {
   display: flex;
+
+  @include respond(mobile) {
+    flex-wrap: wrap;
+  }
 }
 
 .hero-content {
@@ -44,7 +48,7 @@
 }
 
 .hero-image {
-  display: none;
+  // display: none;
   max-width: 360px;
   transform: translateX(5%);
 
