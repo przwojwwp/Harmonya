@@ -1,8 +1,12 @@
 .footer {
-  display: flex;
+  display: relative;
+  left: 0;
   background-color: black;
-  width: 100%;
+  width: 100dvw;
   height: 200px;
+  margin-left: -16px;
+  margin-bottom: -16px;
+  padding: 16px;
 }
 
 .footer-container {
@@ -54,7 +58,6 @@
 }
 
 .social-icon {
-
   font-size: 36px;
 }
 
