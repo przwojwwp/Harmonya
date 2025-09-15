@@ -18,9 +18,8 @@ export const Footer = () => {
               />
             </a>
             <p>
-              Tworzymy w zgodzie z Tobą.
-              <br />
-              Profesjonalny marketing dla branży wellness.
+              Tworzymy w zgodzie z Tobą. Profesjonalny marketing dla branży
+              wellness.
             </p>
           </div>
 
@@ -52,56 +51,10 @@ export const Footer = () => {
               ></i>
             </a>
           </div>
-
-          {/* <div className="footer-links">
-            <h3>Nawigacja</h3>
-            <ul>
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#benefits">Korzyści</a>
-              </li>
-              <li>
-                <a href="#testimonials">Opinie</a>
-              </li>
-              <li>
-                <a href="#faq">FAQ</a>
-              </li>
-              <li>
-                <a href="#pricing">Oferta</a>
-              </li>
-              <li>
-                <a href="#contact">Kontakt</a>
-              </li>
-            </ul>
-          </div> */}
         </div>
-
-        {/* <div className="footer-links">
-          <h3>Usługi</h3>
-          <ul>
-            <li>
-              <a href="#pricing">Social Media</a>
-            </li>
-            <li>
-              <a href="#pricing">Strategia Widoczności</a>
-            </li>
-            <li>
-              <a href="#pricing">Kampanie Reklamowe</a>
-            </li>
-            <li>
-              <a href="#contact">Sesje zdjęciowe</a>
-            </li>
-            <li>
-              <a href="#contact">Audyt marketingowy</a>
-            </li>
-          </ul>
-        </div> */}
-
-        <div className={styles["footer-bottom"]}>
-          <p>&copy; 2025 Harmonya Agency. Wszelkie prawa zastrzeżone.</p>
-        </div>
+        <p className={styles.copyright}>
+          &copy; 2025 Harmonya Agency. Wszelkie prawa zastrzeżone.
+        </p>
       </div>
     </footer>
   );
