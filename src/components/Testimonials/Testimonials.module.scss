@@ -55,8 +55,8 @@ p {
 .testimonial-image {
   position: relative;
   display: flex;
-  width: clamp(180px, 15vw, 200px);
-  height: clamp(180px, 15vw, 200px);
+  width: clamp(160px, 15vw, 200px);
+  height: clamp(160px, 15vw, 200px);
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 10px;
@@ -72,6 +72,7 @@ p {
 
 .testimonial-author {
   text-align: center;
+  text-wrap: nowrap;
 }
 
 .testimonial-controls {

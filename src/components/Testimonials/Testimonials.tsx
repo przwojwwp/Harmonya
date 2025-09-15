@@ -47,10 +47,7 @@ export const Testimonials = () => {
   } = useTestimonialsSlider(testimonials.length);
 
   return (
-    <section
-      id="testimonials"
-      className={cn(styles.testimonials, styles.section)}
-    >
+    <section id="testimonials" className={cn(styles.testimonials, "section")}>
       <div className="container">
         <div className="section-title" data-aos="fade-up">
           <h2>Co mówią nasi klienci</h2>
