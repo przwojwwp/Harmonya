@@ -38,13 +38,19 @@ export const ServicePackages = () => {
               <div className={styles.services}>
                 <ul>
                   {servicePackage.services.map((service) => (
-                    <li className={styles.included}>
+                    <li
+                      key={`${servicePackage.id}-inc-${service}`}
+                      className={styles.included}
+                    >
                       <i className={cn(styles.check, "fas fa-check")}></i>{" "}
                       {service}
                     </li>
                   ))}
                   {servicePackage.excludedServices.map((excludeService) => (
-                    <li className={styles.excluded}>
+                    <li
+                      key={`${servicePackage.id}-exc-${excludeService}`}
+                      className={styles.excluded}
+                    >
                       <i className={cn(styles.cross, "fas fa-times")}></i>{" "}
                       {excludeService}
                     </li>

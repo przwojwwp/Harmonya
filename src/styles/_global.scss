@@ -3,6 +3,10 @@
 .section {
   padding: $section-padding 0 0;
   position: relative;
+
+  @include respond(mobile) {
+    padding: $section-padding-sm 0 0;
+  }
 }
 
 .container {
