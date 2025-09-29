@@ -3,49 +3,15 @@ import cn from "classnames";
 import styles from "./Hero.module.scss";
 
 export const Hero = () => {
-  const [compact, setCompact] = useState(false);
-  const imgRef = useRef<HTMLImageElement | null>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!imgRef.current) return;
-
-    const isMobile = () => window.innerWidth <= 825;
-    let lastMobile = isMobile();
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        const r = entries[0]?.intersectionRatio ?? 1;
-        if (!isMobile()) {
-          if (compact) setCompact(false);
-          return;
-        }
-        setCompact(r < 0.6);
-      },
-      { root: null, threshold: Array.from({ length: 21 }, (_, i) => i / 20) }
-    );
-
-    io.observe(imgRef.current);
-
-    const onResize = () => {
-      const nowMobile = isMobile();
-      if (lastMobile !== nowMobile) {
-        lastMobile = nowMobile;
-        if (!nowMobile && compact) setCompact(false);
-      }
-    };
-    window.addEventListener("resize", onResize);
-
-    return () => {
-      io.disconnect();
-      window.removeEventListener("resize", onResize);
-    };
-  }, [compact]);
+  useEffect(() =>
+  {
+    
+  }, []);
 
   return (
-    <section
-      id="home"
-      className={cn(styles.hero, "section", compact && styles.compact)}
-    >
+    <section id="home" className={cn(styles.hero, "section")}>
       <div className="container">
         <div className={styles["hero-wrapper"]}>
           <div
@@ -70,8 +36,8 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className={styles["hero-image"]}>
-            <img ref={imgRef} src="img/me2.jpeg" alt="Harmonya" />
+          <div ref={imgRef} className={styles["hero-image"]}>
+            <img src="img/me2.jpeg" alt="Harmonya" />
           </div>
         </div>
       </div>
