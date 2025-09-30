@@ -18,8 +18,8 @@ export const Hero = () => {
       const fullyVisible =
         rect.top >= 0 &&
         rect.left >= 0 &&
-        rect.bottom <= window.innerHeight + 10 &&
-        rect.right <= window.innerWidth + 10;
+        rect.bottom <= window.innerHeight + 50 &&
+        rect.right <= window.innerWidth + 50;
 
       setIsVisible(fullyVisible);
     };

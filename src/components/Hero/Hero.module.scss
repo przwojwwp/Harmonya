@@ -7,8 +7,10 @@
   // background: linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.85));
   //   url("/api/placeholder/1600/900") center/cover no-repeat;
   overflow: hidden;
+  padding-top: 54px;
 
   @media screen and (min-width: 576px) {
+    box-sizing: border-box;
   }
 }
 
@@ -20,10 +22,10 @@
 
   min-height: calc(100dvh - 66px);
 
-  // @media screen and (min-width: 576px) {
-  //   flex-direction: row;
-  //   flex-wrap: nowrap;
-  // }
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }
 
 .hero-content {
@@ -37,7 +39,10 @@
 
   @media screen and (min-width: 576px) {
     flex-wrap: wrap;
-    justify-content: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    align-items: start;
   }
 }
 
@@ -76,6 +81,14 @@
   @media screen and (min-width: 576px) {
     // height: 100%;
     max-width: 70vw;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-grow: 2;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 400px;
   }
 
   img {
