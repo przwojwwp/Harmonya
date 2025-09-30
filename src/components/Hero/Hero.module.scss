@@ -51,18 +51,27 @@
   color: $color-text-muted;
   letter-spacing: 2px;
   text-transform: uppercase;
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 8px;
+  }
 }
 
 .hero h1 {
   margin-bottom: 0;
 
-  @media screen and (max-width: 576px) {
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 24px;
   }
 }
 
 .hero-description {
   font-size: 1.2rem;
   margin-bottom: 2dvh;
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 40px;
+  }
 }
 
 .hero-cta {
@@ -79,7 +88,6 @@
   flex-grow: 1;
 
   @media screen and (min-width: 576px) {
-    // height: 100%;
     max-width: 70vw;
   }
 
@@ -88,7 +96,9 @@
   }
 
   @media screen and (min-width: 1024px) {
-    height: 400px;
+    min-width: 33%;
+    height: 360px;
+    transform: translateY(-6%);
   }
 
   img {

@@ -4,7 +4,7 @@
   padding: $section-padding-sm 0 0;
   position: relative;
 
-  @include respond(desktop) {
+  @include respond(tablet) {
     padding: $section-padding 0 0;
   }
 }
