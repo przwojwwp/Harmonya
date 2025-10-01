@@ -1,11 +1,15 @@
 @use "./shared.scss" as *;
 
 .section {
-  padding: $section-padding-sm 0 0;
+  padding: 0 0 $section-padding-sm 0;
   position: relative;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include respond(tablet) {
-    padding: $section-padding 0 0;
+    padding: 0 0 $section-padding 0;
   }
 }
 

@@ -37,8 +37,6 @@ export const Hero = () => {
       { threshold: [0, 1] }
     );
 
-    // observer.observe(imgRef.current);
-
     window.addEventListener("resize", checkVisibility);
     checkVisibility();
 
@@ -80,10 +78,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-
-      <div className={styles["hero-decoration"]} />
-      <div className={styles["hero-decoration"]} />
-      <div className={styles["hero-decoration"]} />
     </section>
   );
 };

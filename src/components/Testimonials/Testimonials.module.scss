@@ -42,13 +42,13 @@ p {
 
 .testimonial-person {
   display: none;
+
   width: 20%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   @include respond(tablet) {
-    display: flex;
   }
 }
 
