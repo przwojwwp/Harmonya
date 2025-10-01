@@ -32,7 +32,7 @@ export const Header = () => {
         <nav className={styles.navbar}>
           <a href="#" className={styles.logo}>
             <img
-              src="public/img/logo.jpeg"
+              src="img/logo.jpeg"
               alt="Harmonya Logo"
               className={styles["logo-image"]}
             />
