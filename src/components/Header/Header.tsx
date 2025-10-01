@@ -10,20 +10,7 @@ export const Header = () => {
   const breakpoint = useBreakPoint();
   const headerRef = useRef<HTMLElement>(null);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (!headerRef.current) return;
-  //     if (window.scrollY > 50) {
-  //       headerRef.current.classList.add(styles["header-scrolled"]);
-  //     } else {
-  //       headerRef.current.classList.remove(styles["header-scrolled"]);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+  
 
   return (
     <header id="header" ref={headerRef} className={styles.header}>
