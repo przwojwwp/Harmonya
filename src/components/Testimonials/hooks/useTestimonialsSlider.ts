@@ -39,7 +39,7 @@ export const useTestimonialsSlider = (length: number) => {
       } else {
         handleNext();
       }
-    }, 5000);
+    }, 50000);
   };
 
   const slideToIndex = (

@@ -3,13 +3,14 @@
 .section {
   padding: 0 0 $section-padding-sm 0;
   position: relative;
-  min-height: 100dvh;
+  min-height: calc(100dvh - 70px);
   display: flex;
   justify-content: center;
   align-items: center;
 
   @include respond(tablet) {
     padding: 0 0 $section-padding 0;
+    min-height: auto;
   }
 }
 
