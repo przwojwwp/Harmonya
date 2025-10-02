@@ -12,7 +12,7 @@ export const Footer = () => {
           <div className={styles["footer-logo"]}>
             <a href="#" className={styles.logo}>
               <img
-                src="public/img/logo.jpeg"
+                src="img/logo.jpeg"
                 alt="Harmonya Logo"
                 className={styles["logo-image"]}
               />
