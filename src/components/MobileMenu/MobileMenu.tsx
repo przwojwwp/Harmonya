@@ -50,7 +50,6 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: Props) => {
         </li>
       </ul>
       <a
-        
         onClick={() => setIsMenuOpen(false)}
         href="#contact"
         aria-label="Kontakt"

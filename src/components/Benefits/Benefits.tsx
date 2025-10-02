@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export const Benefits = () => {
   const [colInRow, setColInRow] = useState(3);
-  const tablet = 640;
+  const tablet = 1024;
   const desktop = 1200;
 
   useEffect(() => {
