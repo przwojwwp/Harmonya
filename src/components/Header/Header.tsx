@@ -10,8 +10,6 @@ export const Header = () => {
   const breakpoint = useBreakPoint();
   const headerRef = useRef<HTMLElement>(null);
 
-  
-
   return (
     <header id="header" ref={headerRef} className={styles.header}>
       <div className="container">

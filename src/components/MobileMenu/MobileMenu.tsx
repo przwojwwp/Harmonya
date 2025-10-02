@@ -24,22 +24,34 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: Props) => {
       </div>
       <ul className={styles.links}>
         <li>
-          <a href="#home">Home</a>
+          <a onClick={() => setIsMenuOpen(false)} href="#home">
+            Home
+          </a>
         </li>
         <li>
-          <a href="#benefits">Korzyści</a>
+          <a onClick={() => setIsMenuOpen(false)} href="#benefits">
+            Korzyści
+          </a>
         </li>
         <li>
-          <a href="#testimonials">Opinie</a>
+          <a onClick={() => setIsMenuOpen(false)} href="#testimonials">
+            Opinie
+          </a>
         </li>
         <li>
-          <a href="#faq">FAQ</a>
+          <a onClick={() => setIsMenuOpen(false)} href="#faq">
+            FAQ
+          </a>
         </li>
         <li>
-          <a href="#service-packages">Oferta</a>
+          <a onClick={() => setIsMenuOpen(false)} href="#service-packages">
+            Oferta
+          </a>
         </li>
       </ul>
       <a
+        
+        onClick={() => setIsMenuOpen(false)}
         href="#contact"
         aria-label="Kontakt"
         className={cn("btn", styles.contact)}
