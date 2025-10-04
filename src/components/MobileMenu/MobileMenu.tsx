@@ -13,7 +13,7 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: Props) => {
       <div className={styles.header}>
         <a href="#" className={styles.logo}>
           <img
-            src="public/img/logo.jpeg"
+            src="img/logo.jpeg"
             alt="Harmonya Logo - Strona główna"
             className={styles["logo-image"]}
           />
